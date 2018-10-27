@@ -1,0 +1,19 @@
+POINT
+  5
+4D
+100
+AcDbEntity
+  8
+0
+  6
+ByLayer
+ 62
+  256
+370
+   -1
+100
+AcDbPoint
+ 10
+1.11
+ 20
+2.22

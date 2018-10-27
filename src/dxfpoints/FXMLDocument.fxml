@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dxfpoints.FXMLDocumentController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="300.0">
+         <children>
+            <Label text="Points in CSV File">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="taContentsOfCsvFile" editable="false" prefHeight="645.0" prefWidth="300.0" />
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="300.0">
+         <children>
+            <Label text="Convert CSV to DXF Points">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="20.0" prefWidth="300.0" text="1. Choose CSV file with points coordinates" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label alignment="CENTER" layoutX="20.0" layoutY="47.0" prefHeight="20.0" prefWidth="300.0" text="(default is 'test_points.csv' in working folder)" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="btnLoadCsv" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#handleBtnLoadCsv" prefHeight="30.0" prefWidth="131.0" text="Load CSV File" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="tfInputCsvFileName" promptText="test_points.csv" text="test_points.csv">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label text="2. Set output DXF file name (optional):">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="33.0" layoutY="157.0" text="will be saved in working folder (exe/jar), ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="27.0" layoutY="182.0" text=".dxf extension is automatically added">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="tfOutputCsvFileName">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Button fx:id="btnGenerateDxf" mnemonicParsing="false" onAction="#handleBtnGenerateDxf" text="Generate DXF File" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <TextArea fx:id="taStatusMessages" editable="false" prefHeight="292.0" prefWidth="280.0" text="Program messages">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </TextArea>
+            <Button fx:id="btnClose" mnemonicParsing="false" onAction="#handleBtnClose" text="Close Program">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Label layoutX="91.0" layoutY="353.0" text="github.com/novakpetrovic/dxfpoints" textFill="LIGHTSLATEGRAY">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_RIGHT" prefHeight="600.0" prefWidth="300.0">
+         <children>
+            <Label text="Contents of DXF File">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="taContentsOfDxfFile" editable="false" prefHeight="630.0" prefWidth="300.0">
+               <font>
+                  <Font name="Monospaced Regular" size="12.0" />
+               </font></TextArea>
+         </children>
+      </VBox>
+   </children>
+</HBox>
