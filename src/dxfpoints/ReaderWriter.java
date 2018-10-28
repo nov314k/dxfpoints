@@ -37,24 +37,24 @@ public class ReaderWriter {
         BufferedReader br = null;
         DxfPoint dxfPt;
         File fin = new File(inputCsvFileName);
-        int pointNumber = 1;
         String str = null;
+        String strN = null;
         String strX = null;
         String strY = null;
         String strZ = null;
         try {
             br = new BufferedReader(new InputStreamReader(new FileInputStream(fin), "UTF-8"));
             while ((str = br.readLine()) != null) {
-                strX = str.split(",")[0];
-                strY = str.split(",")[1];
-                strZ = str.split(",")[2];
+                strN = str.split(",")[0];
+                strX = str.split(",")[1];
+                strY = str.split(",")[2];
+                strZ = str.split(",")[3];
                 dxfPt = new DxfPoint(
-                        pointNumber,
+                        Integer.parseInt(strN),
                         Double.parseDouble(strX),
                         Double.parseDouble(strY),
                         Double.parseDouble(strZ));
                 dxfPts.add(dxfPt);
-                pointNumber++;
             }
             br.close();
         } catch (IOException e) {
@@ -105,16 +105,16 @@ public class ReaderWriter {
                 bw.write("\n");
             }
             br.close();
-            // Write points, circles, and two text boxes
+            // Write points and two text boxes
             for (DxfPoint el : dxfPts) {
                 // Points
                 bw.write(el.dxfPointString());
                 bw.write("\n");
                 DxfDoc.hexEntityCounter++;
-                // Circles
-                bw.write(el.dxfPointCircleString());
-                bw.write("\n");
-                DxfDoc.hexEntityCounter++;
+                // Circles are no longer required
+                //bw.write(el.dxfPointCircleString());
+                //bw.write("\n");
+                //DxfDoc.hexEntityCounter++;
                 // Point Numbers
                 bw.write(el.dxfPointNumberString());
                 bw.write("\n");

@@ -66,7 +66,9 @@ public class DxfPoint {
             " 10\n" +
             String.valueOf(this.x) + "\n" +
             " 20\n" +   
-            String.valueOf(this.y);
+            String.valueOf(this.y) + "\n" +
+            " 30\n" +
+            String.valueOf(this.z);
             // Note: we don't put \n here, but in ReaderWriter
     }
     
@@ -199,7 +201,7 @@ public class DxfPoint {
             // Note: we don't put \n here, but in ReaderWriter
     }
     
-    public double getPointNumber() {
+    public int getPointNumber() {
         return pointNumber;
     }
 
