@@ -105,7 +105,7 @@ public class FXMLDocumentController implements Initializable {
         dxfPts = rw.readCsv(str1);
         String str2 = "";
         for (DxfPoint el: dxfPts) {
-            str2 += "#";
+            // str2 += "#";
             str2 += el.getPointNumber();
             str2 += ": xyz= ";
             str2 += el.getX() + ", ";

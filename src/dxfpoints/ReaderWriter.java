@@ -50,7 +50,7 @@ public class ReaderWriter {
                 strY = str.split(",")[2];
                 strZ = str.split(",")[3];
                 dxfPt = new DxfPoint(
-                        Integer.parseInt(strN),
+                        strN,
                         Double.parseDouble(strX),
                         Double.parseDouble(strY),
                         Double.parseDouble(strZ));

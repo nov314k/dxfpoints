@@ -28,17 +28,17 @@ public class DxfPoint {
     final double POINT_NUMBER_BOX_X_OFFSET = 2 * POINT_CIRCLE_RADIUS;
     final double POINT_NUMBER_BOX_Y_OFFSET = 0.0;
     final double TEXT_HEIGHT = 0.75;
-    int pointNumber;
+    String pointNumber;
     
     
-    DxfPoint(int pointNumber, double x, double y) {
+    DxfPoint(String pointNumber, double x, double y) {
         this.pointNumber = pointNumber;
         this.x = x;
         this.y = y;
         this.z = 0d;
     }
     
-    DxfPoint(int pointNumber, double x, double y, double z) {
+    DxfPoint(String pointNumber, double x, double y, double z) {
         this.pointNumber = pointNumber;
         this.x = x;
         this.y = y;
@@ -201,7 +201,7 @@ public class DxfPoint {
             // Note: we don't put \n here, but in ReaderWriter
     }
     
-    public int getPointNumber() {
+    public String getPointNumber() {
         return pointNumber;
     }
 
@@ -217,7 +217,7 @@ public class DxfPoint {
         return z;
     }
     
-    public void setPointNumber(int pointNumber) {
+    public void setPointNumber(String pointNumber) {
         this.pointNumber = pointNumber;
     }
 

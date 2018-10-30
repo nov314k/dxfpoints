@@ -17,8 +17,10 @@
 package dxfpoints;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.TimeZone;
 
 public class DxfDoc {
@@ -29,16 +31,9 @@ public class DxfDoc {
     
     DxfDoc() {
         Calendar calCurrent = Calendar.getInstance(TimeZone.getTimeZone("Europe/Belgrade"));
-        // TODO Solve the problem with values < 10 and padding zero
-        int month = calCurrent.get(Calendar.MONTH) + 1;
-        this.dxfOutputFileName += 
-                calCurrent.get(Calendar.YEAR) + "-" +
-                month + "-" +
-                calCurrent.get(Calendar.DAY_OF_MONTH) + "-" +
-                calCurrent.get(Calendar.HOUR_OF_DAY) + "-" +
-                calCurrent.get(Calendar.MINUTE) + "-" +
-                // TODO Maybe change so it incorporates input CSV file name
-                "points.dxf";          
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
+        String fn = sdf.format(new Date(calCurrent.getTimeInMillis())) + "-points.dxf";
+        this.dxfOutputFileName = fn;
     }
     
     DxfDoc(String dxfOutputFileName) {
@@ -78,7 +73,7 @@ public class DxfDoc {
             "0";
             // Note: we don't put \n here, but in ReaderWriter
     }
-
+    
     public String getDxfOutputFileName() {
         return dxfOutputFileName;
     }
