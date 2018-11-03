@@ -39,5 +39,4 @@ public class DxfPoints extends Application {
 // TODO Check how many decimal points in coordinates
 // TODO Change current layer to 0
 // TODO Only have one reading of CSV file
-// TODO Change the picture in README file
 // TODO Add resulting DXF file to README as further illustration
