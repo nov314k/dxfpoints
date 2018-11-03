@@ -37,6 +37,7 @@ public class ReaderWriter {
         BufferedReader br = null;
         DxfPoint dxfPt;
         File fin = new File(inputCsvFileName);
+        int numberCommas = 0;
         String str = null;
         String strN = null;
         String strX = null;
@@ -48,7 +49,12 @@ public class ReaderWriter {
                 strN = str.split(",")[0];
                 strX = str.split(",")[1];
                 strY = str.split(",")[2];
-                strZ = str.split(",")[3];
+                numberCommas = str.length() - str.replace(".", "").length();
+                if (numberCommas < 3) {
+                    strZ = "0.0";
+                } else {
+                    strZ = str.split(",")[3];
+                }
                 dxfPt = new DxfPoint(
                         strN,
                         Double.parseDouble(strX),
